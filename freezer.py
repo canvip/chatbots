@@ -56,6 +56,7 @@ def handle_verification():
         return 'Error, wrong validation token'
 
 
+
 @app.route('/chatbots', methods=['POST'])
 def handle_messages():
     print "Handling Messages"
