@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template,request,json
-
-from flask_frozen import Freezer
-from flask_flatpages import FlatPages
-
-
+from flask import Flask,render_template,request,json
 import requests
 app = Flask(__name__)
-app.config.from_pyfile('settings.py')
-pages = FlatPages(app)
-freezer = Freezer(app)
+#from flask_frozen import Freezer
+#from flask_flatpages import FlatPages
+#app.config.from_pyfile('settings.py')
+#pages = FlatPages(app)
+#freezer = Freezer(app)
 
 
 @app.route('/')
@@ -41,7 +38,7 @@ def blog():
 #s = u"العربيّة"#
 ##ASx = s#
 #
-json_string = json.dumps(u"احمد").decode('unicode-escape').encode('utf8')
+#json_string = json.dumps(u"احمد").decode('unicode-escape').encode('utf8')
 #json.dumps(d).decode('unicode-escape').encode('utf8')
 PAT = 'EAAL4ocStaMQBACk2wMNpXZAUEKtVC6nJxsA4I3xpVCAeLSoacXyiUUZASpzZCT3MCM9ZCulMaVMz2olgEPcvdt8wKPS0EaaQO6ANrhlwA3158OwTZAPbXkuFYKikPzBXOOcdfpZBQ31FZCWg8i1jAMTy4lY2djAZCNfEm59DPzlYawZDZD'
 
@@ -102,4 +99,4 @@ def send_message(token, recipient, text):
 if __name__ == '__main__':
     #port = int(os.environ.get('PORT', 5000))
     app.run(debug=True, port=80)
-
+    #main.freezer.freeze()
