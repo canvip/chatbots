@@ -40,7 +40,7 @@ def blog():
 #
 #json_string = json.dumps(u"احمد").decode('unicode-escape').encode('utf8')
 #json.dumps(d).decode('unicode-escape').encode('utf8')
-PAT = 'EAAL4ocStaMQBACk2wMNpXZAUEKtVC6nJxsA4I3xpVCAeLSoacXyiUUZASpzZCT3MCM9ZCulMaVMz2olgEPcvdt8wKPS0EaaQO6ANrhlwA3158OwTZAPbXkuFYKikPzBXOOcdfpZBQ31FZCWg8i1jAMTy4lY2djAZCNfEm59DPzlYawZDZD'
+PAT = '#'
 
 @app.route('/chatbots', methods=['GET'])
 def handle_verification():
