@@ -40,7 +40,7 @@ def blog():
 #
 #json_string = json.dumps(u"احمد").decode('unicode-escape').encode('utf8')
 #json.dumps(d).decode('unicode-escape').encode('utf8')
-PAT = '#'
+PAT = 'EAAE0grCYNqQBAAokqq0PLY78O4vClEOujdUuTvvoL7qWKYY2YQetrPMfM8RAsAeDI0na8X7dYGTIQor2l0iAYF82zIYjKvv1x3w4uIW0YMJ0rV3awojyfAZCsZCxA5gAZAcfB6YDUdOp0YZBKidonI6BQZCiv8Vbd9MnJKp6kNQZDZD'
 
 @app.route('/chatbots', methods=['GET'])
 def handle_verification():
@@ -71,9 +71,9 @@ def messaging_events(payload):
     messaging_events = data["entry"][0]["messaging"]
     for event in messaging_events:
         if "message" in event and "text" in event["message"]:
-            yield event["sender"]["id"], event["message"]["text"].encode('unicode_escape')
+            yield event["sender"]["id"], event["message"]["text"].encoding('utf-8')
         else:
-            yield event["sender"]["id"],text
+            yield event["sender"]["id"]
 
 
 def send_message(token, recipient, text):
@@ -84,7 +84,7 @@ def send_message(token, recipient, text):
         params={"access_token": token},
         data=json.dumps({
             "recipient": {"id": recipient},
-            "message": {"text": text.encode('utf-8')}
+            "message": {u"text": unicode(text,ensure_ascii=False, encoding="utf-8")}
         }),
         headers={'Content-type': 'application/json'})
     if r.status_code != requests.codes.ok:
