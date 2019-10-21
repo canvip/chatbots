@@ -42,6 +42,6 @@ Unidecode==0.4.21
 urllib3==1.22
 virtualenv==12.0
 webencodings==0.5.1
-Werkzeug==0.12
+Werkzeug==0.15.3
 wit==4.2.0
 wrapt==1.10.10
